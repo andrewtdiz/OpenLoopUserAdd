@@ -1,6 +1,19 @@
-# Getting Started with Create React App
+# OpenLoop User Add Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made with [Create React App](https://github.com/facebook/create-react-app) and [TailwindCSS](https://tailwindcss.com/).
+
+Requirements: 
+- Built with React. Feel free to use Create React App if you'd prefer, along with any other libraries (UI, forms, validation, etc.) that help you get the job done.
+- Form on the left, list of submissions on the right.
+- The first field in the form should auto-focus on page load and after each submission.
+- Form contains fields for: first name, last name, email, and note.
+- Each item in the submissions list should display: first name, last name, note, and email.
+- All form fields are required.
+- If a field has a validation error, display a status message below it, and indicate the error with a red border.
+  - Ensure the `email` field value is the correct format.
+  - Disable form submissions unless the form is valid.
+- Reset the form on submit.
+- Allow the user to remove submissions from the list.
 
 ## Available Scripts
 
