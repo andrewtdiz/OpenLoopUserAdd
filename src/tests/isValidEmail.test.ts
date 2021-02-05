@@ -1,7 +1,5 @@
 import isValidEmail from '../utils/isValidEmail';
 
-const sum = (a:number,b:number) => a+b;
-
 const validEmails =
 [
 	"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@letters-in-local.org",
