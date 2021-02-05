@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function UserTable({userList, removeUser}:any) {
+export default function SubmissionList({userList, removeUser}:any) {
     return (
       <div className="flex-1 px-4 flex flex-col">
         <ul className="list-inside list-disc">

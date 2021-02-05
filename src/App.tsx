@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import Form from './components/Form';
-import UserTable from './components/UserTable';
+import SubmissionList from './components/SubmissionList';
 import './index.css';
 
-function App() {
-  const [userList, setUserList] = useState<Array<any>>([]);
+function App({initialUserList = []}:any) {
+  const [userList, setUserList] = useState<Array<any>>([...initialUserList]);
 
   const addUser = (userInfo:any) => {
     setUserList(prevUserList => [...prevUserList, userInfo])
@@ -20,7 +20,7 @@ function App() {
         <h1 className="text-center text-4xl font-bold my-6">Add Users</h1>
         <div className="flex">
             <Form addUser={addUser}/>
-            <UserTable userList={userList} removeUser={removeUser}/>
+            <SubmissionList userList={userList} removeUser={removeUser}/>
         </div>
       </div>
     </div>

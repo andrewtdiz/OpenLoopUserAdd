@@ -52,25 +52,29 @@ export default function Form({addUser}:any) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="flex-1"> 
+        <form aria-label="user-form" onSubmit={handleSubmit} className="flex-1"> 
             <div className="form-row">
                 <label htmlFor="firstName" className="form-label">First Name</label>
-                <input ref={inputRef} name="firstName" value={userForm.firstName} onChange={changeField} className="form-input"/>
+                <input aria-label="first-name" ref={inputRef} name="firstName" value={userForm.firstName} onChange={changeField} className="form-input"/>
+                
             </div>
             <div className="form-row">
-                <label htmlFor="lastName" className="form-label">Last Name</label>
-                <input name="lastName" value={userForm.lastName} onChange={changeField} className="form-input"/>
+                <label htmlFor="lastName" className="form-label">Last name</label>
+                <input aria-label="last-name" name="lastName" value={userForm.lastName} onChange={changeField} className="form-input"/>
+                
             </div>
             <div className="form-row">
                 <label htmlFor="email" className="form-label">Email</label>
-                <input name="email" value={userForm.email} onChange={changeField} className={"form-input " + ((failedSubmit && !isValidEmail(userForm.email)) && "form-input-error")}/>
+                <input aria-label="email" name="email" value={userForm.email} onChange={changeField} className={"form-input " + ((failedSubmit && !isValidEmail(userForm.email)) && "form-input-error")}/>
+                
                 {(failedSubmit && !isValidEmail(userForm.email)) && <p className="text-red-500 text-xs">
                     Email must be valid!
                 </p>}
             </div>
             <div className="form-row">
                 <label htmlFor="note" className="form-label">Note</label>
-                <textarea name="note" value={userForm.note} onChange={changeField} className="form-input"/>
+                <textarea aria-label="note" name="note" value={userForm.note} onChange={changeField} className="form-input"/>
+                
             </div>
             <button type="submit" disabled={formHasEmptyField()} className={"button mt-6 " + (formHasEmptyField() && "button-disabled")}>+ Add User</button>
         </form>
