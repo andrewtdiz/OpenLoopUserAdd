@@ -63,7 +63,7 @@ export default function Form({addUser}:any) {
             </div>
             <div className="form-row">
                 <label htmlFor="email" className="form-label">Email</label>
-                <input name="email" value={userForm.email} onChange={changeField} className="form-input"/>
+                <input name="email" value={userForm.email} onChange={changeField} className={"form-input " + ((failedSubmit && !isValidEmail(userForm.email)) && "form-input-error")}/>
                 {(failedSubmit && !isValidEmail(userForm.email)) && <p className="text-red-500 text-xs">
                     Email must be valid!
                 </p>}
