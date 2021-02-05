@@ -1,6 +1,6 @@
 # OpenLoop User Add Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was made with [Create React App](https://github.com/facebook/create-react-app) and [TailwindCSS](https://tailwindcss.com/).
 
 Requirements: 
 - Built with React. Feel free to use Create React App if you'd prefer, along with any other libraries (UI, forms, validation, etc.) that help you get the job done.
