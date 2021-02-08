@@ -2,11 +2,15 @@ import React, {useState} from 'react';
 import Form from './components/Form';
 import SubmissionList from './components/SubmissionList';
 import './index.css';
+import UserInfo from './interfaces/UserInfo';
+import CatDisplay from './components/CatDisplay';
 
-function App({initialUserList = []}:any) {
-  const [userList, setUserList] = useState<Array<any>>([...initialUserList]);
+const initialUserList:Array<UserInfo> = [];
 
-  const addUser = (userInfo:any) => {
+function App() {
+  const [userList, setUserList] = useState<Array<UserInfo>>([...initialUserList]);
+
+  const addUser = (userInfo:UserInfo) => {
     setUserList(prevUserList => [...prevUserList, userInfo])
   }
 
@@ -23,6 +27,7 @@ function App({initialUserList = []}:any) {
             <SubmissionList userList={userList} removeUser={removeUser}/>
         </div>
       </div>
+      <CatDisplay />
     </div>
   );
 }

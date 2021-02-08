@@ -1,9 +1,14 @@
 import React, {useState, useEffect, useRef} from 'react';
 import INITIAL_USER_FORM from '../initialUserForm';
 import isValidEmail from '../utils/isValidEmail';
+import UserInfo from '../interfaces/UserInfo';
 
-export default function Form({addUser}:any) {
-    const [userForm, setUserForm] = useState(INITIAL_USER_FORM);
+interface FormProps {
+    addUser: (userInfo:UserInfo) => void
+}
+
+export default function Form({addUser}:FormProps) {
+    const [userForm, setUserForm] = useState<UserInfo>(INITIAL_USER_FORM);
     const [failedSubmit, setFailedSubmit] = useState(false);
     const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -15,7 +20,7 @@ export default function Form({addUser}:any) {
         if(inputRef!==null) inputRef.current?.focus();
     }
 
-    const handleSubmit = (e:any) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if(formHasInvalidField()) {
             setFailedSubmit(true);
@@ -27,7 +32,7 @@ export default function Form({addUser}:any) {
         }
     }
    
-    const changeField = ({target}: any) => {
+    const changeField = ({target}: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
         setUserForm({
             ...userForm,
             [target.name] : target.value
